@@ -10,9 +10,10 @@ use Psl\Str;
 
 class SplitPathsTest extends TestCase
 {
-    public function testJoinPaths(): void
+    public function testSplitPaths(): void
     {
         self::assertSame(['/home/azjezz', '/tmp'], Env\split_paths(Str\format('/home/azjezz%s/tmp', PATH_SEPARATOR)));
-        self::assertSame(['/home/azjezz', '/tmp'], Env\split_paths('/home/azjezz'));
+        self::assertSame(['/home/azjezz', '/tmp'], Env\split_paths(Env\join_paths('/home/azjezz', '/tmp')));
+        self::assertSame(['/home/azjezz'], Env\split_paths('/home/azjezz'));
     }
 }

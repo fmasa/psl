@@ -12,7 +12,7 @@ namespace Psl\Env;
 function args(): array
 {
     /** @psalm-var list<string>|null $args */
-    $args = $GLOBALS['args'] ?? null;
+    $args = $GLOBALS['argv'] ?? null;
     if (null === $args) {
         return [];
     }

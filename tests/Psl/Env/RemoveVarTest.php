@@ -10,6 +10,9 @@ use Psl\Exception\InvariantViolationException;
 
 class RemoveVarTest extends TestCase
 {
+    /**
+     * @backupGlobals
+     */
     public function testRemoveVar(): void
     {
         self::assertNull(Env\get_var('FOO'));
